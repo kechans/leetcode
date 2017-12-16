@@ -1,3 +1,7 @@
+#include <iostream>
+#include <vector>
+#include <algorithm>
+using namespace std;
 class Solution {
 public:
     vector<int> twoSum(vector<int>& nums, int target) {
@@ -17,8 +21,21 @@ public:
             }else{
                 v.push_back(i);
                 v.push_back(j);
+					 break;
             }
         }
         return v;
     }
 };
+
+int main()
+{
+	vector<int> v={2,7,11,15};
+	vector<int> res;
+	Solution s;
+	res=s.twoSum(v,9);
+	for(int i=0;i<res.size();i++){
+		cout<<res[i]<<endl;
+	}
+	return 0;
+}
