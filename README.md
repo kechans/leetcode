@@ -1,2 +1,0 @@
-# LeetCode
-My LeetCode Program
