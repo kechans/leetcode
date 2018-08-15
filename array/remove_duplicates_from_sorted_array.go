@@ -18,7 +18,8 @@ func removeDuplicates(nums []int) int {
 	}
 	return i + 1
 }
-结题思路：i 是慢指针，j是快指针，当nums[i]==nums[j] 时，我们递增j跳过重复，当nums[i]!=nums[j]时,我们给i加一，把nums[j]的值付给nums[i+1],保证前i+1个数是不重复的
+结题思路：i 是慢指针，j是快指针，当nums[i]==nums[j] 时，我们递增j跳过重复，
+当nums[i]!=nums[j]时,我们给i加一，把nums[j]的值付给nums[i+1],保证前i+1个数是不重复的
 func show(array []int) {
 	for _, v := range array {
 		fmt.Print("  ", v)
