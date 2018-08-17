@@ -28,6 +28,19 @@ func containsDuplicate2(nums []int) bool {
 	}
 	return false
 }
+
+func containsDuplicateII(nums []int) bool {
+	length := len(nums)
+    for i:=0;i<length;i++{
+        for j:=i+1;j<i+k&&j<length;j++{
+            if nums[i]==nums[j]{
+                return true
+            }
+        }
+    }
+    return false
+}
+
 func  main(){
 	var array =[]int{1,2,3,1}
 	res := containsDuplicate2(array)
