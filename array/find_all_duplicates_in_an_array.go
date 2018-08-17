@@ -5,14 +5,14 @@ import (
 	
 )
 
-func find_all_duplicates_in_an_array(nums []int) []int{
-	length := len(nums) 
+func findDuplicates(nums []int) []int {
+    length := len(nums) 
 	var tmp  []int
 	for i := 0;i < length; i++{
 		src := WithBranch(nums[i])
 		index := src-1 
 		if nums[index] < 0 {
-			tmp= append(tmp,nums[index])
+			tmp= append(tmp,index+1)
 		}
 		nums[index] = -nums[index]
 	}
