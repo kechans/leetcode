@@ -16,11 +16,26 @@ func maxProfit1(prices []int) int {
     return maxproit
 }
 
-func maxProfit2(prices []int) int {
-	global := 0
+func maxProfit(prices []int) int {
+    maxproit := 0
 	local := 0
     for i:=0;i<len(prices)-1;i++{
-        local = (prices[i+1] - prices[i]) > 
+		local = getmax(local + prices[i+1] - prices[i] ,0) 
+        maxproit = getmax(local , maxproit )
     }
     return maxproit
+}
+
+func getmax(a,b int)int{
+    if a>b {
+        return a
+    }else{
+        return b
+    }
+}
+
+func main(){
+	var array =[]int{7,1,5,3,6,4}
+	res := maxProfit(array)
+	fmt.Println(res)
 }
