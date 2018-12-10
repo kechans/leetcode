@@ -10,8 +10,9 @@
 
 //3．再对左右区间重复第二步，直到各区间只有一个数。
 
+//cpp version 
 int AdjustArray(int src[], int left, int right) {//返回调整后基准数的位置
-    int index = src[0];
+    int index = src[left];
     int i=left,j=right;
     while(i<j){
         while(i<j && src[i]<index){//left --> right
@@ -34,10 +35,11 @@ int AdjustArray(int src[], int left, int right) {//返回调整后基准数的�
     return i;
 }
 
-void sort(int src[],int left,int right){
+void asort(int src[],int left,int right){
     if(left <right){
         int current = AdjustArray(src,left,right);
         AdjustArray(src,left,current-1);
         AdjustArray(src,current+1,right);
     }
 }
+
