@@ -8,8 +8,9 @@
 //
 
 //堆的插入   一般都用数组来表示堆，i结点的父结点下标就为(i – 1) / 2。它的左右子结点下标分别为2 * i + 1和2 * i + 2。如第0个结点左右子结点下标分别为1和2
-//  次插入都是将新数据放在数组最后。可以发现从这个新数据的父结点到根结点必然为一个有序的数列
+//  每次插入都是将新数据放在数组最后。可以发现从这个新数据的父结点到根结点必然为一个有序的数列
 
+// 堆的删除，每次删除的都是第0个元素，然后从跟节点开始进行一次自上而下的调整，
 // n =》 a的长度，num要插入的新数据
 /*void MinHeapAddNumber(int a[],int n,int num){
     a[n] = num;
@@ -33,7 +34,7 @@ void MinHeapFixup(int a[], int n){
 
 
 #include <iostream>
-#include<algorithm>
+#include <algorithm>
 using namespace std;
 
 void HeapAdjust(int *a,int i,int size)  //调整堆
@@ -77,7 +78,7 @@ void HeapSort(int *a,int size)    //堆排序
         //cout<<a[1]<<" ";
         swap(a[1],a[i]);           //交换堆顶和最后一个元素，即每次将剩余元素中的最大者放到最后面
           //BuildHeap(a,i-1);        //将余下元素重新建立为大顶堆
-          HeapAdjust(a,1,i-1);      //重新调整堆顶节点成为大顶堆
+        HeapAdjust(a,1,i-1);      //重新调整堆顶节点成为大顶堆
     }
 }
 
