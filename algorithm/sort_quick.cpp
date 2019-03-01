@@ -15,23 +15,24 @@ int AdjustArray(int src[], int left, int right) {//返回调整后基准数的�
     int index = src[left];
     int i=left,j=right;
     while(i<j){
+        // 从左向右找大于index的数来填src[j]
         while(i<j && src[i]<index){//left --> right
             i++;
         }
-        if(i<j){//说明找到一个数字比index 大
+        if(i<j){//说明找到一个数字比index大,才能退出上边的while循环
             src[j]=src[i];
             j--;
         }
-
+        //从右向左找比index小的数字，
         while(i<j && src[j]>=index){
             j--;
         }
-        if(i<j){
+        if(i<j){//找到比index小的数字，放到左边
             src[i]=src[j];
             i++;
         }
     }
-    src[i] = index;//退出时，i等于j。将x填到这个坑中
+    src[i] = index;//退出时，i等于j。将index填到这个坑中
     return i;
 }
 
