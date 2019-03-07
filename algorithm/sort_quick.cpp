@@ -1,6 +1,6 @@
 //https://blog.csdn.net/MoreWindows/article/details/6684558
 
-//O(N*logN)    分治法a
+//最优时间复杂度O(N*logN)，最差时间复杂度O(N*N)    分治法a
 
 //该方法的基本思想是：
 
