@@ -24,10 +24,10 @@ func issymmetric(left , right * TreeNode){
 	if left == nil && right == nil {
 		return true
 	}
-	if left && !right || right && !left || left.Val != right.Val {
+	if left == nil || right == nil {
 		return false
 	}
-	return issymmetric(left.Left,right.Right) && issymmetric(left.Right,right.Left)
+	return (left.val == right.val) && issymmetric(left.Left,right.Right) && issymmetric(left.Right,right.Left)
 }
 func main(){
 
