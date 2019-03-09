@@ -27,5 +27,19 @@ vector<int> firsttraver(TreeNode* root){//使用栈，时间复杂度o(n),空间
 
 中序遍历 
 vector<int> innertraver(TreeNode* root){
-  
+         stack<TreeNode*> s;
+        vector<int> v;
+        const TreeNode* p = root;
+        while(!s.empty() || p!=NULL){
+            if(p != NULL){
+                s.push(p);
+                p =p->left;
+            }else{
+                p =s.top();
+                s.pop();
+                v.push_back(p->val);
+                p = p->right;
+            }
+        }
+        return v;
 }
