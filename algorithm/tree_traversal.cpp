@@ -25,7 +25,12 @@ vector<int> firsttraver(TreeNode* root){//使用栈，时间复杂度o(n),空间
   return v;
 }
 
-中序遍历 
+中序遍历 思路
+从根节点开始，先将根节点压入栈
+
+然后再将其所有左子结点压入栈，取出栈顶节点，保存节点值
+
+再将当前指针移到其右子节点上，若存在右子节点，则在下次循环时又可将其所有左子结点压入栈中
 vector<int> innertraver(TreeNode* root){
          stack<TreeNode*> s;
         vector<int> v;
