@@ -17,28 +17,6 @@ https://blog.csdn.net/hrn1216/article/details/51465270
 //堆的插入：每次都是将插入元素放在最后一个位置，然后自低向上，递归调整，
 // 堆的删除，每次删除的都是第0个元素，将二叉树的最后一个节点与根节点交换，然后自顶向下，递归调整
 
-// n =》 a的长度，num要插入的新数据
-/*void MinHeapAddNumber(int a[],int n,int num){
-    a[n] = num;
-    MinHeapFixup(a, n);
-}
-//新加入i节点，父节点为(i-1)/2;
-void MinHeapFixup(int a[], int n){
-    int j ,tmp;
-    tmp = a[i];
-    j = (n-1)/2;
-    while(j >= 0 && n != 0){
-        if (a[j] <= tmp){
-            break;
-        }
-        a[n] = a[j];
-        n = j;
-        j = (n-1)/2;
-    }
-    a[i] = tmp;
-}*/
-
-
 #include <iostream>
 #include <algorithm>
 using namespace std;
