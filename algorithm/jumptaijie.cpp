@@ -41,3 +41,20 @@ int jumpn(int n){
   return result[n];
 }
 
+
+
+求m*n 矩阵方程走法；
+int num(m,n){
+  if m == 0 &&n == 0{
+    return 0;
+  }
+  if n==1{
+    return m+1;
+  }
+  
+  if m==1{
+    return n+1;
+  }
+  
+  return num(m-1,n)+num(m,n-1);
+}
