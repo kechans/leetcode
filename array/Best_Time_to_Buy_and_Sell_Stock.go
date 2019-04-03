@@ -39,3 +39,24 @@ func main(){
 	res := maxProfit(array)
 	fmt.Println(res)
 }
+
+
+
+//cpp solution 
+class Solution {
+public:
+    int maxProfit(vector<int>& prices) {
+        int res=0;
+        int minprice=INT_MAX;//此处必须定义为INT_MAX
+        for(int i=0;i<prices.size();i++){
+            //res = max(res,prices[i]-minprice);
+            if(prices[i] < minprice){
+                minprice=prices[i];
+            }else if(prices[i]-minprice > res){
+                res = prices[i]-minprice;
+            }
+        }
+        return res;
+    }
+};
+
