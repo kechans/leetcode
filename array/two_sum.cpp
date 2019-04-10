@@ -1,3 +1,21 @@
+//哈希表方法
+
+class Solution {
+public:
+    vector<int> twoSum(vector<int>& nums, int target) {
+        unordered_map<int, int> m;
+        for (int i = 0; i < nums.size(); ++i) {
+            if (m.count(target - nums[i])) {//count判断元素是否在容器中
+                return {i, m[target - nums[i]]};
+            }
+            m[nums[i]] = i;
+        }
+        return {};
+    }
+};
+
+
+//暴力轮训方法
 class Solution {
 public:
     vector<int> twoSum(vector<int>& nums, int target) {
@@ -17,7 +35,7 @@ public:
 
 
 //夹逼排序
-class Solution {
+class Solution { //仅仅适合于返回找到的元素，而不是返回元素的下表
 public:
     vector<int> twoSum(vector<int>& nums, int target) {
        // int left = nums[0];
