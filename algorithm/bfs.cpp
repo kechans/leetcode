@@ -1,4 +1,5 @@
 //层次遍历二叉树
+/*
     3
    / \
   9  20
@@ -20,6 +21,8 @@
  *     TreeNode(int x) : val(x), left(NULL), right(NULL) {}
  * };
  */
+ // cpp version
+ /*
 class Solution {
 public:
     vector<vector<int>> levelOrder(TreeNode* root) {
@@ -51,3 +54,4 @@ public:
     
 };
   
+*/
