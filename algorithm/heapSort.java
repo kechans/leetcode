@@ -24,7 +24,7 @@ public class heapSort {
         if(c1<n && arr[c1] > arr[max]){
             max = c1;
         }
-        if(c2<n && arr[c2] > arr[max]){
+        if(c2<n && arr[c2] > arr[max]){ 
             max = c2;
         }
         if(max != i){
