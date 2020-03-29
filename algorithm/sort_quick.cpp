@@ -12,7 +12,7 @@
 
 //cpp version 
 int AdjustArray(int src[], int left, int right) {//返回调整后基准数的位置
-    int index = src[left];
+    int index = src[right];
     int i=left,j=right;
     while(i<j){
         // 从左向右找大于index的数来填src[j]
@@ -39,8 +39,8 @@ int AdjustArray(int src[], int left, int right) {//返回调整后基准数的�
 void asort(int src[],int left,int right){
     if(left <right){
         int current = AdjustArray(src,left,right);
-        AdjustArray(src,left,current-1);
-        AdjustArray(src,current+1,right);
+        asort(src,left,current-1);
+        asort(src,current+1,right);
     }
 }
 
