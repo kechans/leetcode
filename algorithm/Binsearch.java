@@ -1,5 +1,15 @@
+package algorithm;
+
+
 class Binsearch {
+    /** 时间复杂度 O(logn)
+     * @Description search
+     * @Date  2020/3/27 19:37
+     * @Param [nums, target]
+     * @return int
+     **/
     public int search(int[] nums, int target) {
+
         int left = 0;
         int right = nums.length -1;
         while (left <= right){
@@ -18,6 +28,7 @@ class Binsearch {
     public static void main(String[] args) {
         int[] arr = new int[] { 12, 23, 34, 45, 56, 67, 77, 89, 90 };
         Binsearch s = new Binsearch();
-        s.search(arr,23);
+        int res = s.search(arr,12);
+        System.out.println(res);
     }
 }
