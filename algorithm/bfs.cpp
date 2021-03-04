@@ -55,3 +55,44 @@ public:
 };
   
 */
+
+
+/**
+ * Definition for a binary tree node.
+ * struct TreeNode {
+ *     int val;
+ *     TreeNode *left;
+ *     TreeNode *right;
+ *     TreeNode(int x) : val(x), left(NULL), right(NULL) {}
+ * };
+ */
+一个队列加一个栈实现
+class Solution {
+public:
+    vector<int> levelOrder(TreeNode* root) {
+        queue<TreeNode*> q;
+        vector<int> res;
+        // 考虑边缘情况
+        if (root != nullptr)
+        {
+            q.push(root);
+        }
+        // 一直遍历直到队列里为空
+        while (!q.empty())
+        {
+            TreeNode* curr = q.front();
+            q.pop();
+            res.push_back(curr->val);
+            if (curr->left != nullptr)
+            {
+                q.push(curr->left);
+            }
+            if (curr->right != nullptr)
+            {
+                q.push(curr->right);
+            }
+        }
+
+        return res;
+    }
+};
